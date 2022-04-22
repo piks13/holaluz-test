@@ -3,6 +3,7 @@
     <SearchSection />
     <v-row>
       <ClientSection />
+      <SupplyPointSection />
     </v-row>
   </div>
 </template>

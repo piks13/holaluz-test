@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 export const state = () => ({
   clients: [],
   client: null,
@@ -48,4 +47,13 @@ export const getters = {
   clients: (state) => state.clients,
   client: (state) => state.client,
   supplyPoints: (state) => state.supplyPoints,
+  supplyPoint(state) {
+    let supplyPoint = null
+    if (state.client) {
+      supplyPoint = state.supplyPoints.find(
+        (supply) => state.client.cups === supply.cups
+      )
+    }
+    return supplyPoint
+  },
 }
