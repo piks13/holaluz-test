@@ -18,7 +18,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    {
+      src: '@/assets/scss/main.scss',
+      lang: 'scss',
+    },
+  ],
 
   publicRuntimeConfig: {
     baseUrl: process.env.BASE_URL,

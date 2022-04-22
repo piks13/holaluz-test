@@ -1,0 +1,8 @@
+.c-card {
+  &__divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #e6007d, #f06c17 85%, #ffba03);
+    margin: 1rem 0;
+  }
+}

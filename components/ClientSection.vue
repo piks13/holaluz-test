@@ -1,7 +1,7 @@
 <template>
-  <v-col cols="6">
+  <v-col cols="12" md="6">
     <v-card v-if="client" class="c-card mt-8 pa-3">
-      <v-card-title class="pa-0 display-1 secondary--text">
+      <v-card-title class="pa-0 headline secondary--text">
         Datos del cliente</v-card-title
       >
       <div class="c-card__divider"></div>
@@ -34,13 +34,3 @@ export default {
   },
 }
 </script>
-<style scoped lang="scss">
-.c-card {
-  &__divider {
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #e6007d, #f06c17 85%, #ffba03);
-    margin: 1rem 0;
-  }
-}
-</style>
