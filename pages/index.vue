@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <p>hola</p>
+      <p class="primary--text">hola</p>
     </v-col>
   </v-row>
 </template>
