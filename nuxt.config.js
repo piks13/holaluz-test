@@ -20,6 +20,19 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL,
+  },
+  serverMiddleware: [
+    {
+      path: 'api/clients',
+      handler: '~/serverMiddleware/clients.js',
+    },
+    {
+      path: 'api/supply-points',
+      handler: '~/serverMiddleware/supply-points.js',
+    },
+  ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
