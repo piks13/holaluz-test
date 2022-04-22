@@ -1,13 +1,21 @@
 <template>
-  <v-row>
-    <v-col>
-      <p class="primary--text">hola</p>
-    </v-col>
-  </v-row>
+  <div>
+    <SearchSection />
+  </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'HolaLuzLanding',
+
+  async fetch() {
+    await this.fetchClients()
+    await this.fetchSupplyPoints()
+  },
+  computed: {},
+  methods: {
+    ...mapActions(['fetchClients', 'fetchSupplyPoints']),
+  },
 }
 </script>
