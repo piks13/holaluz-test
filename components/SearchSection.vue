@@ -13,12 +13,13 @@
         return-object
         clearable
         hide-details
+        @change="changeClient()"
       ></v-autocomplete>
     </v-col>
   </v-row>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'SearchSection',
@@ -29,6 +30,12 @@ export default {
   },
   computed: {
     ...mapGetters(['clients']),
+  },
+  methods: {
+    ...mapMutations(['SET_CLIENT']),
+    changeClient() {
+      this.SET_CLIENT(this.values)
+    },
   },
 }
 </script>

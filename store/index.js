@@ -2,12 +2,16 @@ import axios from 'axios'
 
 export const state = () => ({
   clients: [],
+  client: null,
   supplyPoints: [],
 })
 
 export const mutations = {
   SET_CLIENTS(state, data) {
     state.clients = data
+  },
+  SET_CLIENT(state, data) {
+    state.client = data
   },
   SET_SUPPLY_POINTS(state, data) {
     state.supplyPoints = data
@@ -42,5 +46,6 @@ export const actions = {
 }
 export const getters = {
   clients: (state) => state.clients,
+  client: (state) => state.client,
   supplyPoints: (state) => state.supplyPoints,
 }

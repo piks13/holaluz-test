@@ -1,6 +1,9 @@
 <template>
   <div>
     <SearchSection />
+    <v-row>
+      <ClientSection />
+    </v-row>
   </div>
 </template>
 
