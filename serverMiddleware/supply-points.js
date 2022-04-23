@@ -1,4 +1,4 @@
-const supplyPoints = require('../static/data/supply-points.json')
+const supplyPoints = require('../assets/data/supply-points.json')
 export default {
   path: '/api/supply-points',
   handler(req, res) {

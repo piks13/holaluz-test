@@ -1,4 +1,4 @@
-const clients = require('../static/data/clients.json')
+const clients = require('../assets/data/clients.json')
 export default {
   path: '/api/clients',
   handler(req, res) {
