@@ -48,12 +48,40 @@ export const getters = {
   client: (state) => state.client,
   supplyPoints: (state) => state.supplyPoints,
   supplyPoint(state) {
-    let supplyPoint = null
-    if (state.client) {
-      supplyPoint = state.supplyPoints.find(
-        (supply) => state.client.cups === supply.cups
-      )
+    return state.supplyPoints.find(
+      (supply) => state.client?.cups === supply.cups
+    )
+  },
+  supplyPointByCups: (state) => (cups) => {
+    return state.supplyPoints.find((supply) => supply.cups === cups)
+  },
+  isEnrolled(state, getters) {
+    const isHouse = state.client && state.client.building_type === 'house'
+    const hasNeighbors =
+      getters.supplyPoint && getters.supplyPoint.neighbors?.length > 0
+
+    return isHouse && hasNeighbors
+  },
+  offerType(state, getters) {
+    let invoicedAmountNeighbors = 0
+    const p1Powers = []
+    const p2Powers = []
+    const neighborsCups = getters.supplyPoint?.neighbors
+    if (neighborsCups) {
+      neighborsCups.forEach((neighborCups) => {
+        const dataNeighbor = getters.supplyPointByCups(neighborCups)
+        invoicedAmountNeighbors += parseFloat(dataNeighbor.invoiced_amount)
+        p1Powers.push(parseInt(dataNeighbor.power.p1))
+        p2Powers.push(parseInt(dataNeighbor.power.p2))
+      })
+      if (invoicedAmountNeighbors > 100) {
+        return '**Special discount**: 12% discount.'
+      }
+      return parseInt(getters.supplyPoint.power.p1) > Math.max(...p1Powers) &&
+        parseInt(getters.supplyPoint.power.p2) > Math.max(...p2Powers)
+        ? '**Basic discount**: 5% discount. '
+        : '**Standard offer**'
     }
-    return supplyPoint
+    return '**Standard offer**'
   },
 }
