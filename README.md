@@ -74,3 +74,9 @@ This directory contains two fake endpoint response for clients and supply-points
 ## `.env`
 
 This file contains the enviroment vars, endpoints routes for example.
+
+## `important`
+
+Run dev project in port 3000 or update .env with your local project URL.
+
+In PRE / PRO enviroments use .env 'BASE_URL' var for set the api domain.
