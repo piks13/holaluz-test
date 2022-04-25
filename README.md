@@ -13,8 +13,6 @@ $ npm run dev
 $ npm run build
 $ npm run start
 
-# generate static project
-$ npm run generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
@@ -70,6 +68,10 @@ More information about the usage of this directory in [the documentation](https:
 ## `serverMiddleware`
 
 This directory contains two fake endpoint response for clients and supply-points
+
+## `test`
+
+This directory contains the project test
 
 ## `.env`
 
