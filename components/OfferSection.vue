@@ -13,7 +13,7 @@
             <v-icon v-else color="error">mdi-close-thick</v-icon>
           </v-col>
           <v-col v-if="isEnrolled">
-            <span class="font-weight-bold"
+            <span class="offer-type font-weight-bold"
               >Tipo de oferta:
               <span class="secondary--text"> {{ offerType }}</span>
             </span>
